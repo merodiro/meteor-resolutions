@@ -11,7 +11,7 @@ export default {
       // const id = Resolutions.insert({
       //   name: ""
       // })
-      // console.log("hello")
+      console.log("hello")
     }
   }
 }
