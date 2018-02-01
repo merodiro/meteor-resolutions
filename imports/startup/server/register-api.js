@@ -3,13 +3,14 @@ import { createApolloServer } from 'meteor/apollo'
 import { Engine } from 'apollo-engine'
 import { makeExecutableSchema } from 'graphql-tools'
 
-import ResolutionsSchema from '../../api/resolutions/Resolutions.graphql'
+import ResolutionsSchema from '../../api/resolution/Resolution.graphql'
 
 const PORT = process.env.PORT || 3000;
 
 const testSchema = `
 type Query {
     hi: String
+    resolutions: [Resolution]
 }
 `
 
@@ -21,6 +22,17 @@ const resolvers = {
     Query: {
         hi() {
             return "Hello World"
+        },
+        resolutions() {
+            return [{
+                    _id: "jsfkahjak",
+                    name: "Get stuff done!"
+                },
+                {
+                    _id: "jsfkahasfak",
+                    name: "Lose some weight!"
+                }
+            ]
         }
     }
 }

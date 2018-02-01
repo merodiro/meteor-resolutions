@@ -1,4 +1,4 @@
-type Resolutions {
+type Resolution {
     _id: String!
     name: String!
     # createdAt: 
