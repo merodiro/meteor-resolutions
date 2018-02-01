@@ -26,7 +26,7 @@ class App extends Component {
     return (
       <div>
         <h1>{data.hi}</h1>
-        <ResolutionForm />
+        <ResolutionForm refetch={data.refetch} />
         <ul>
           {data.resolutions.map(resolution => (
             <li key={resolution._id}>{resolution.name}</li>
