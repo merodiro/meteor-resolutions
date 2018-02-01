@@ -8,6 +8,7 @@
     "@babel/runtime": "^7.0.0-beta.36",
     "apollo-client": "^2.2.1",
     "apollo-client-preset": "^1.0.6",
+    "apollo-engine": "^0.8.5",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "graphql": "^0.12.3",
