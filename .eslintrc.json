@@ -1,0 +1,33 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": ["@meteorjs/eslint-config-meteor", "eslint:recommended"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalDecorators": true,
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "rules": {
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "never"],
+    "react/prop-types": ["warn"],
+    "react/prefer-stateless-function": ["warn"]
+  },
+  "settings": {
+    "import/resolver": {
+      "meteor": true,
+      "node": {
+        "extensions": [".js", ".jsx"]
+      }
+    }
+  }
+}

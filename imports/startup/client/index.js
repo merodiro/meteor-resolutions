@@ -10,19 +10,20 @@ import { InMemoryCache } from 'apollo-cache-inmemory'
 import App from '../../ui/App'
 
 const httpLink = new HttpLink({
-    uri: Meteor.absoluteUrl('graphql')
+  uri: Meteor.absoluteUrl('graphql')
 })
 
 const cache = new InMemoryCache()
 const client = new ApolloClient({
-    link: httpLink,
-    cache
+  link: httpLink,
+  cache
 })
 
 Meteor.startup(() => {
-    render((
-        <ApolloProvider client={client}>
-            <App />
-        </ApolloProvider>
-    ), document.getElementById('app'))
+  render(
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>,
+    document.getElementById('app')
+  )
 })

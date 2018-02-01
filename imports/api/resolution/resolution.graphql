@@ -1,5 +1,9 @@
 type Resolution {
-    _id: String!
-    name: String!
-    # createdAt: 
+  _id: String!
+  name: String!
+  # createdAt:
+}
+
+type Mutation {
+  createResolution: Resolution
 }
