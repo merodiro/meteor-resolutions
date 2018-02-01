@@ -43,7 +43,7 @@ const engine = new Engine({
   engineConfig: {
     apiKey: 'service:merodiro-4894:G5lFcAjcRJ3u4wuOBxax3A',
     logging: {
-      level: 'DEBUG', // DEBUG, INFO, WARN or ERROR
+      level: 'WARN', // DEBUG, INFO, WARN or ERROR
     },
   },
   graphqlPort: PORT,
