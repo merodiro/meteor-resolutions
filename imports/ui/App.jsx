@@ -5,9 +5,8 @@ import React, { Component } from 'react'
 import ResolutionForm from './ResolutionForm'
 
 
-const hiQuery = gql`
-  query TodoAppQuery {
-    hi
+const resolutionsQuery = gql`
+  query Resolutions {
     resolutions {
       _id
       name
@@ -15,20 +14,19 @@ const hiQuery = gql`
   }
 `
 
-@graphql(hiQuery)
+@graphql(resolutionsQuery)
 class App extends Component {
   render() {
-    const {data} = this.props
-    if (data.loading) {
+    const {loading, resolutions} = this.props.data
+    if (loading) {
       return <div>Loading...</div>
     }
   
     return (
       <div>
-        <h1>{data.hi}</h1>
-        <ResolutionForm refetch={data.refetch} />
+        <ResolutionForm />
         <ul>
-          {data.resolutions.map(resolution => (
+          {resolutions.map(resolution => (
             <li key={resolution._id}>{resolution.name}</li>
           ))}
         </ul>

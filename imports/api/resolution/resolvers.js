@@ -11,7 +11,7 @@ export default {
       const id = Resolutions.insert({
         name: name
       })
-      return Resolutions.findOne(id);
+      return Resolutions.findOne(id)
     }
   }
 }

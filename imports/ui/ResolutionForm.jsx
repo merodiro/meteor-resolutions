@@ -3,26 +3,29 @@ import gql from 'graphql-tag'
 import { graphql } from 'react-apollo'
 
 const createResolution = gql`
-mutation createResolution($name: String!) {
-  createResolution (name: $name) {
-    _id
+  mutation createResolution($name: String!) {
+    createResolution(name: $name) {
+      _id
+    }
   }
-}
 `
 @graphql(createResolution, {
-  name: 'createResolution'
+  name: 'createResolution',
+  options: {
+    refetchQueries: ['Resolutions']
+  }
 })
 class ResolutionForm extends PureComponent {
   submitForm = () => {
-    this.props.createResolution({
-      variables: {
-        name: this.name.value
-      }
-    }).then(({data}) => {
-      this.props.refetch()
-    }).catch(error => {
-      console.error(error)
-    })
+    this.props
+      .createResolution({
+        variables: {
+          name: this.name.value
+        }
+      })
+      .catch(error => {
+        console.error(error)
+      })
     this.name.value = ''
   }
 
