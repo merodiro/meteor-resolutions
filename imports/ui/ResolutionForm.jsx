@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
 import gql from 'graphql-tag'
 import { graphql } from 'react-apollo'
 
@@ -38,4 +39,10 @@ class ResolutionForm extends PureComponent {
     )
   }
 }
+
+ResolutionForm.propTypes = {
+  createResolution: PropTypes.func.isRequired
+}
+
+
 export default ResolutionForm
