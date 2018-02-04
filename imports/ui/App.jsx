@@ -2,8 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import gql from 'graphql-tag'
 import { graphql } from 'react-apollo'
+import { Meteor } from 'meteor/meteor'
+
 
 import ResolutionForm from './ResolutionForm'
+import RegisterForm from './RegisterForm'
+import LoginForm from './LoginForm'
 
 const App = ({ data: {loading, resolutions} }) => {
   if (loading) {
@@ -12,7 +16,10 @@ const App = ({ data: {loading, resolutions} }) => {
 
   return (
     <div>
+      <RegisterForm />
+      <LoginForm />
       <ResolutionForm />
+      <button onClick={() => Meteor.logout()}>Logout</button>
       <ul>
         {resolutions.map(resolution => (
           <li key={resolution._id}>{resolution.name}</li>
