@@ -17,7 +17,11 @@ const createResolution = gql`
   }
 })
 class ResolutionForm extends PureComponent {
-  submitForm = (e) => {
+  static propTypes = {
+    createResolution: PropTypes.func
+  }
+
+  submitForm = e => {
     this.props
       .createResolution({
         variables: {
@@ -39,10 +43,5 @@ class ResolutionForm extends PureComponent {
     )
   }
 }
-
-ResolutionForm.propTypes = {
-  createResolution: PropTypes.func
-}
-
 
 export default ResolutionForm

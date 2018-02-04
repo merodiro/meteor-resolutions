@@ -11,6 +11,9 @@ class RegisterForm extends Component {
       },
       error => {
         console.log(error)
+        if (!error) {
+          this.props.client.resetStore()
+        }
       }
     )
   }
